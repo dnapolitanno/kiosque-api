@@ -2,12 +2,8 @@ from menu import products
 
 
 def get_product_by_id(id):
-    try:
-        if not isinstance(id, int):
-            raise TypeError("Product id must be an int")
-    except TypeError as err:
-        print(err)
-        return
+    if not isinstance(id, int):
+        raise TypeError("product id must be an int")
 
     for product in products:
         if product['_id'] == id:
@@ -16,14 +12,10 @@ def get_product_by_id(id):
 
 
 def get_products_by_type(type):
-    try:
-        if not isinstance(type, str):
-            raise TypeError("product type must be a str")
-    except TypeError as err:
-        print(err)
-        return
-
     products_by_type = []
+
+    if not isinstance(type, str):
+        raise TypeError("product type must be a str")
 
     for product in products:
         if product['type'] == type:
@@ -61,7 +53,7 @@ def menu_report():
 
         most_common_type = max(type_counts, key=type_counts.get)
 
-    report = f"Product Count: {product_count} - Average Price: ${average_price} - Most Common Type: {most_common_type}"
+    report = f"Products Count: {product_count} - Average Price: ${average_price} - Most Common Type: {most_common_type}"
     return report
 
 

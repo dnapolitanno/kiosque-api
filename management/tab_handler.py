@@ -14,6 +14,6 @@ def calculate_tab(tables):
             price = product['price']
             subtotal += price * quant
 
-    subtotal_formatado = '{:.2f}'.format(subtotal)
+    subtotal_formatado = '${:.2f}'.format(subtotal).rstrip('0').rstrip('.')
 
     return {'subtotal': subtotal_formatado}

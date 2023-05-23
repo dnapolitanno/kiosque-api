@@ -4,8 +4,8 @@ from menu import products
 
 
 if __name__ == "__main__":
-    print(management.product_handler.get_product_by_id(28))
-    print(management.product_handler.get_products_by_type('drink'))
+    print(management.product_handler.get_product_by_id(27.4))
+    print(management.product_handler.get_products_by_type(28))
     new_product = {
         "title": "X-Python",
         "price": 5.0,
