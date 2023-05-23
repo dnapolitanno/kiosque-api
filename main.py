@@ -23,3 +23,15 @@ if __name__ == "__main__":
 
     print(management.tab_handler.calculate_tab(table_1))
     print(management.tab_handler.calculate_tab(table_2))
+    print(management.product_handler.menu_report())
+    required_keys = ("description", "price", "rating", "title", "type")
+    new_product = {
+        "title": "X-Python",
+        "price": 5.0,
+        "rating": 5,
+        "description": "Sanduiche de Python",
+        "type": "fast-food",
+        "extra_key_1": "extra_value_1",
+        "extra_key_2": "extra_value_2"
+    }
+    print(management.product_handler.add_product_extra(products, *required_keys, **new_product))
